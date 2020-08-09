@@ -41,9 +41,14 @@ def login_google(driver):
 
 
 def input_googleform(driver):
-    driver.find_element_by_xpath(
-        '//div[@label="いいえ は 「咳」の症状 に対する応答です"]')
-    driver.click()
+    time.sleep(4)
+    for element in driver.find_elements_by_xpath('//div[contains(@aria-label, "に対する応答です")]'):
+        if (element.get_attribute("data-value") == "いいえ"):
+            element.click()
+
+    driver.find_element_by_xpath('//div[@aria-label="検温した"]').click()
+    time.sleep(1)
+    driver.find_element_by_xpath('//span[text()="次へ"]').click()
 
 
 if __name__ == '__main__':
