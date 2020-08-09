@@ -40,8 +40,7 @@ def login_google(driver):
     driver.find_element_by_xpath(login_pw_xpath).click()
 
 
-def input_googleform(driver):
-    time.sleep(4)
+def input_googleform_1(driver):
     for element in driver.find_elements_by_xpath('//div[contains(@aria-label, "に対する応答です")]'):
         if (element.get_attribute("data-value") == "いいえ"):
             element.click()
@@ -57,5 +56,5 @@ if __name__ == '__main__':
 
     # Googleにログイン
     login_google(driver)
-
-    input_googleform(driver)
+    time.sleep(4)
+    input_googleform_1(driver)
