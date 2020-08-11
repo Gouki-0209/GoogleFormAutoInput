@@ -15,8 +15,8 @@ class GoogleFormInput:
         return driver
 
     def login_google(driver):
-        login_id = "適当"
-        login_pw = "適当"
+        login_id = "メールアドレス"
+        login_pw = "パスワード"
 
         # 最大待機時間（秒）
         wait_time = 40
